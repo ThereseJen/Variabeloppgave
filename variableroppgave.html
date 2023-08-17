@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Variabeloppgave</title>
+
+
+<style>
+.colorBox {
+width: 100px;
+height: 100px;
+border: 2px solid;
+}
+
+.red{
+background-color: red;
+}
+
+.blue{
+background-color: blue;
+}
+
+
+</style> 
+</head>
+
+<body>
+<div>
+<div id="chosenColor">Trykk på en av boksene under for å endre bakgrunnsfarge!</div>
+</div>
+<div class="colorBox" style="background-color: red;"onclick="changeColor('red');"></div> <br>
+<div class="colorBox" style="background-color: blue;"onclick="changeColor('blue');"></div> <br>
+<div class="colorBox" style="background-color: yellow;"onclick="changeColor('yellow');"></div> <br>
+
+<button onclick="toggleRed()">Trykk her for rød boks</button>
+<button onclick="toggleBlue()">Trykk her for blå boks</button>
+
+<div class="colorBox" id="colorChangeBox"></div>
+
+<script>
+var colorChangeBox = document.getElementById('colorChangeBox');
+
+function changeColor(color) {
+document.body.style.backgroundColor = color;
+}
+
+function toggleRed(){
+colorChangeBox.classList.toggle('red');
+colorChangeBox.classList.remove('blue');
+}
+
+function toggleBlue(){
+colorChangeBox.classList.toggle('blue');
+colorChangeBox.classList.remove('red');
+}
+
+
+</script>
+</body>
+
+</html>
